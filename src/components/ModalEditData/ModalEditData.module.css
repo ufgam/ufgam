@@ -1,0 +1,88 @@
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.buttons {
+  font-family: 'Circe';
+  width: 300px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 20px;
+
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  transition: transform 1s;
+}
+
+.buttons:hover,
+.buttons:focus {
+  transform: scale(1.02);
+}
+
+.box {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.buttonAddTransaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Circe Regular;
+  border: none;
+  margin: 51px 0 20px 0;
+  background-color: var(--green-color);
+  color: var(--light-color);
+}
+
+.buttonCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Circe Regular;
+  border: 1px solid var(--blue-active);
+  color: var(--blue-active);
+  background-color: var(--light-color);
+}
+.btnLogout {
+  color: var(--grey-text);
+  border: none;
+  background-color: var(--light-color);
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: 'Circe';
+}
+@media screen and (min-width: 768px) {
+  .btnLogout {
+    border-left: 1px solid var(--light-color);
+    padding-left: 15px;
+  }
+}
+
+.btnLogout svg {
+  transition: transform 250ms var(--time-function);
+}
+
+.btnLogout svg:hover,
+.btnLogout svg:focus-within {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 767px) {
+  .title_exit {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title_exit {
+    padding-left: 10px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,213 @@
+.header {
+  padding: 40px;
+  width: 100%;
+  background: url(../../img/pattern2.jpg) repeat;
+  position: relative;
+}
+
+.logo {
+  display: block;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.logout {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logout:active img {
+  transform: scale(0.9);
+}
+
+.innerContent {
+  padding: 60px 0;
+  background: #eeeeee;
+}
+
+.wrapper {
+  max-width: 1030px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* account */
+
+.mainTitle {
+  font-family: GaramondC-Light;
+  font-size: 55px;
+  font-weight: normal;
+  color: #185289;
+  letter-spacing: -0.8px;
+  text-align: center;
+}
+
+.accountArea {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.accountCard {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.twoRows {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.accountCard table {
+  width: 100%;
+}
+
+.accountCard td {
+  padding-top: 10px;
+}
+.accountCard th {
+  font-weight: bold;
+}
+
+.accountCard th:first-child {
+  text-align: start;
+  padding-left: 15px;
+}
+.accountCard th:last-child {
+  text-align: end;
+  padding-right: 15px;
+}
+
+.accountCard td:first-child {
+  padding-left: 15px;
+  text-align: start;
+}
+
+.accountCard td:last-child {
+  text-align: end;
+  padding-right: 15px;
+}
+
+.accountCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.accountCardHeaderTitleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.accountHeaderPic {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: grey;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.personalDataWrapper {
+  padding: 10px;
+}
+
+.personalDataWrapper p {
+  color: #686a6c;
+  font-size: 15px;
+  padding-bottom: 15px;
+}
+
+.profileEditLinks {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.profileEditLinks li:first-child {
+  padding-bottom: 10px;
+}
+
+.dealTable {
+  border-collapse: collapse;
+}
+
+.dealTable th {
+  border-bottom: 1px solid black;
+  padding-top: 10px;
+}
+
+.dealTable th:nth-child(2n) {
+  text-align: center;
+}
+.dealTable td:nth-child(2n) {
+  text-align: center;
+}
+
+.footer {
+  background: #093661;
+  padding: 59px 0 45px;
+  color: #7ca5cb;
+}
+
+.footerTitle {
+  font-family: GaramondC-Light;
+  font-size: 44px;
+  letter-spacing: -1.5px;
+}
+
+.footerContacts {
+  font-family: Gotham-Light;
+  font-size: 15px;
+  line-height: 1.6em;
+  margin: 22px 0;
+}
+
+.mFooter {
+  color: #7ca5cb;
+  border-bottom: 1px solid #7ca5cb;
+}
+
+.noborder {
+  border: none;
+}
+
+.mFooter:hover {
+  border: none;
+}
+
+.footerLogoPri {
+  margin-top: 103px;
+}
+
+.footerLogoPri img {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+
+.footerCopy {
+  clear: both;
+  margin-top: 53px;
+  font-size: 12px;
+  color: #a7a6a5;
+  position: relative;
+}
