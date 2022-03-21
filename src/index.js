@@ -7,12 +7,11 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { store, persistor } from './redux/store';
 
-// import 'react-datetime/css/react-datetime.css';
-// import 'modern-normalize/modern-normalize.css';
 // import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-// import '@pnotify/core/dist/PNotify.css';
-// import '@pnotify/core/dist/Material.css';
-// import 'material-design-icons/iconfont/material-icons.css';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/Material.css';
+import '@pnotify/mobile/dist/PNotifyMobile.css';
+import 'material-design-icons/iconfont/material-icons.css';
 import './index.css';
 
 ReactDOM.render(

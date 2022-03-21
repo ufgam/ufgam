@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { alert, defaults } from '@pnotify/core';
-
+import { alert, defaults, defaultModules } from '@pnotify/core';
+import * as PNotifyMobile from '@pnotify/mobile';
+defaultModules.set(PNotifyMobile, {});
 defaults.styling = 'material';
 defaults.icons = 'material';
 defaults.delay = 1000;
 
-// axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
-axios.defaults.baseURL = 'http://localhost:8080/api';
+axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
+// axios.defaults.baseURL = 'http://localhost:8080/api';
 
 const token = {
   set(token) {
@@ -83,10 +84,88 @@ const fetchCurrentUser = createAsyncThunk(
   },
 );
 
+const updateData = createAsyncThunk(
+  '/auth/update',
+  async (credentials, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+
+    try {
+      const { data } = await axios.patch(`/auth`, credentials);
+
+      alert({
+        text: data.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      return;
+    } catch (error) {
+      alert({
+        text: error.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      console.log(error);
+    }
+  },
+);
+
+const updatePassword = createAsyncThunk(
+  '/auth/updatePassword',
+  async (credentials, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+
+    try {
+      const { data } = await axios.patch(`/auth/password`, credentials);
+
+      alert({
+        text: data.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      return;
+    } catch (error) {
+      alert({
+        text: error.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      console.log(error);
+    }
+  },
+);
+
 const authOperations = {
   register,
   logout,
   login,
   fetchCurrentUser,
+  updateData,
+  updatePassword,
 };
 export default authOperations;

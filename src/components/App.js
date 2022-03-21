@@ -8,6 +8,7 @@ import PublicRoute from './PublicRoute';
 import RegisterView from '../views/RegisterView';
 import LoginView from '../views/LoginView';
 import CabinetView from '../views/CabinetView';
+import Loader from './Loader';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function App() {
   useEffect(() => dispatch(authOperations.fetchCurrentUser()), [dispatch]);
   return !isFetchingCurrentUser ? (
     <>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route
             path="/register"
@@ -54,9 +55,7 @@ function App() {
       </Suspense>
     </>
   ) : (
-    <>
-      <p>Loading...</p>
-    </>
+    <Loader />
   );
 }
 

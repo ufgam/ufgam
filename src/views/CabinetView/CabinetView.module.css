@@ -43,12 +43,13 @@
 /* account */
 
 .mainTitle {
-  font-family: GaramondC-Light;
+  font-family: 'Gotham-Light', Arial, sans-serif;
   font-size: 55px;
-  font-weight: normal;
+  font-weight: 600;
   color: #185289;
   letter-spacing: -0.8px;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .accountArea {
@@ -162,6 +163,11 @@ h2 {
   text-align: center;
 }
 
+.dealTableBody tr td:first-child {
+  max-width: 250px;
+  word-break: break-all;
+}
+
 .footer {
   background: #093661;
   padding: 59px 0 45px;
@@ -210,4 +216,96 @@ h2 {
   font-size: 12px;
   color: #a7a6a5;
   position: relative;
+}
+
+.modalHeader {
+  color: rgb(3, 47, 91);
+  font-family: Gotham-Light;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.changeLink {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(85, 26, 139);
+}
+
+.modalClose {
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: #7ca5cb;
+  line-height: 20px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.modalClose:focus,
+.modalClose:hover {
+  border-color: rgb(3, 47, 91);
+  color: rgb(3, 47, 91);
+}
+
+.modalForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.modalForm p {
+  margin-bottom: 5px;
+  color: #7ca5cb;
+  font-family: Gotham-Light;
+  font-size: 16px;
+}
+.modalForm input {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 30px;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #7ca5cb;
+  color: rgb(3, 47, 91);
+}
+
+.modalForm input:hover,
+.modalForm input:focus {
+  border-color: rgb(3, 47, 91);
+}
+.modalForm input :hover,
+.modalForm input:focus {
+  border-color: rgb(3, 47, 91);
+}
+
+.modalForm button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  min-width: 80px;
+  padding: 15px 8px;
+  font-size: 15px;
+  color: #7ca5cb;
+  background: transparent;
+  font-family: Gotham-Medium;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #7ca5cb;
+  cursor: pointer;
+}
+
+.modalForm button:hover {
+  background: #6ab0f1;
+
+  color: #fff;
 }

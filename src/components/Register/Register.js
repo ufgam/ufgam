@@ -5,8 +5,10 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import { validate } from 'indicative/validator';
-import { alert, defaults } from '@pnotify/core';
+import { alert, defaults, defaultModules } from '@pnotify/core';
+import * as PNotifyMobile from '@pnotify/mobile';
 import logo from '../../img/logo.svg';
+defaultModules.set(PNotifyMobile, {});
 
 defaults.styling = 'material';
 defaults.icons = 'material';
@@ -22,8 +24,8 @@ export default function Register() {
   const schema = {
     name: 'string|min:1|max:12',
     email: 'required|email',
-    password: 'required|min:6|max:12|confirmed',
-    password_confirmation: 'required|min:6|max:12',
+    password: 'required|min:6|max:22|confirmed',
+    password_confirmation: 'required|min:6|max:22',
   };
 
   const messages = {

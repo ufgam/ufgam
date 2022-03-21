@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
-import { alert, defaults } from '@pnotify/core';
+import { alert, defaults, defaultModules } from '@pnotify/core';
+import * as PNotifyMobile from '@pnotify/mobile';
 import logo from '../../img/logo.svg';
+defaultModules.set(PNotifyMobile, {});
 
 defaults.styling = 'material';
 defaults.icons = 'material';
