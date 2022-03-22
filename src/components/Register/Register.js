@@ -22,7 +22,7 @@ export default function Register() {
   const [password_confirmation, setConfirmPassword] = useState('');
 
   const schema = {
-    name: 'string|min:1|max:24',
+    name: 'string|min:1|max:26',
     email: 'required|email',
     password: 'required|min:6|max:22|confirmed',
     password_confirmation: 'required|min:6|max:22',
