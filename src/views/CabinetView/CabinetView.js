@@ -238,7 +238,7 @@ export default function CabinetView() {
                 </tbody>
               </table>
             </div>
-            <div className={s.accountCard}>
+            <div className={`${s.accountCard} ${s.userDataCard}`}>
               <div className={s.accountCardHeader}>
                 <div className={s.accountCardHeaderTitleWrapper}>
                   <img
@@ -391,7 +391,7 @@ export default function CabinetView() {
           ></input>
           <p>Phone</p>
           <input
-            placeholder="+3X XXX XXX XX XX"
+            placeholder="+XX XXX XXX XX XX"
             autoComplete="off"
             type="text"
             onChange={handleChange}

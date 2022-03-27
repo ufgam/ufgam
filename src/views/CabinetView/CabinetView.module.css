@@ -56,6 +56,7 @@
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
 }
 
 .accountCard {
@@ -308,4 +309,57 @@ h2 {
   background: #6ab0f1;
 
   color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 30px 0;
+  }
+
+  .innerContent {
+    padding: 30px 0;
+  }
+
+  .wrapper {
+    padding: 0 8px;
+  }
+
+  .mainTitle {
+    font-size: 40px;
+  }
+
+  .accountArea {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .userDataCard {
+    grid-row-start: -2;
+    grid-row-end: -1;
+  }
+
+  .accountCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accountCardHeaderTitleWrapper {
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    padding: 20px 0;
+  }
+
+  .footerLogoPri {
+    margin-top: 30px;
+  }
+
+  th {
+    font-size: 15px;
+  }
+
+  td {
+    font-size: 13px;
+  }
 }
