@@ -22,7 +22,7 @@ export default function Register() {
   const [password_confirmation, setConfirmPassword] = useState('');
 
   const schema = {
-    name: '26',
+    name: 'string|min:1|max:26',
     email: 'required|email',
     password: 'required|min:6|max:22|confirmed',
     password_confirmation: 'required|min:6|max:22',
@@ -82,6 +82,7 @@ export default function Register() {
       setPassword('');
       setConfirmPassword('');
     } catch (er) {
+      console.log(er);
       alert({
         text: er[0].message,
         hide: true,
