@@ -16,15 +16,38 @@
   width: 100%;
 }
 
-.logout {
+.headerButtons{
   position: absolute;
   right: 10px;
   top: 10px;
+  display: flex;
+}
+
+select{
+  background-color: transparent;
+  height: 25px;
+  border-radius: 30px;
+  border-width: 2px;
+  border-color: silver;
+  font-family: 'Gotham-Light',
+  Arial,
+  sans-serif;
+  color: silver;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+  outline: none;
+}
+
+.logout {
   background: none;
   border: none;
   cursor: pointer;
 }
 
+.logout:hover img {
+  transform: scale(1.1);
+}
 .logout:active img {
   transform: scale(0.9);
 }
@@ -44,7 +67,7 @@
 
 .mainTitle {
   font-family: 'Gotham-Light', Arial, sans-serif;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 600;
   color: #185289;
   letter-spacing: -0.8px;
@@ -176,8 +199,8 @@ h2 {
 }
 
 .footerTitle {
-  font-family: GaramondC-Light;
-  font-size: 44px;
+  font-family: Gotham-Light;
+  font-size: 34px;
   letter-spacing: -1.5px;
 }
 
@@ -297,7 +320,7 @@ h2 {
   font-size: 15px;
   color: #7ca5cb;
   background: transparent;
-  font-family: Gotham-Medium;
+  font-family: Gotham-Light;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
@@ -325,7 +348,7 @@ h2 {
   }
 
   .mainTitle {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .accountArea {
