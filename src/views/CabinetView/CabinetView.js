@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import s from './CabinetView.module.css';
 import logo from '../../img/logo.svg';
 import userpic from '../../img/userpic.png';
-import logoPri from '../../img/logo_pri.png';
+// import logoPri from '../../img/logo_pri.png';
 import logout from '../../img/logout.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { authOperations, authSelectors } from '../../redux/auth';
@@ -33,6 +33,7 @@ const customStyles = {
     backgroundColor: 'rgba(3, 47, 91, 0.95)',
   },
   content: {
+    // width: '100%',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -209,8 +210,8 @@ export default function CabinetView() {
 
   return (
     <IntlProvider locale={locale} messages={localMessages} defaultLocale="en">
-      <div className={s.header}>
-        <a href="/" className={s.logo} title="UFG Asset Management">
+      <div id="/" className={s.header}>
+        <a href="#/" className={s.logo} title="UFG Asset Management">
           <img src={logo} alt="UFG Asset Management" />
         </a>
         <div className={s.headerButtons}>
@@ -294,8 +295,8 @@ export default function CabinetView() {
                   <tr>
                     <td>
                       <FormattedMessage
-                        id="app.divideds"
-                        defaultMessage="Divideds"
+                        id="app.dividends"
+                        defaultMessage="Dividends"
                       />
                     </td>
                     <td>{userData.dividends}</td>
@@ -417,83 +418,6 @@ export default function CabinetView() {
               </table>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className={s.footer}>
-        <div className={s.wrapper}>
-          <div className={s.footerMain}>
-            <div className={s.footerLeft}>
-              <div className={s.footerTitle}>
-                <p name="contacts">
-                  <FormattedMessage
-                    id="app.contacts"
-                    defaultMessage="Contacts"
-                  />
-                </p>
-              </div>
-              <div className={s.footerContacts}>
-                UFG Asset Management
-                <br />
-                <FormattedMessage
-                  id="app.address1"
-                  defaultMessage="West Tower, Federatsiya Business Center"
-                />
-                <br />
-                <FormattedMessage
-                  id="app.address2"
-                  defaultMessage="12 Presnenskaya naberezhnaya"
-                />
-                <br />
-                <FormattedMessage
-                  id="app.address3"
-                  defaultMessage="Moscow 123112, Russia"
-                />
-                <br />
-                <a
-                  href="tel:+74951092013"
-                  className={`link ${s.mFooter}  ${s.noborder}`}
-                >
-                  <FormattedMessage id="app.tel" defaultMessage="Tel" />: +7 495
-                  109 2013
-                </a>
-                <br />
-                <a
-                  href="fax:+74951092038"
-                  className={`link ${s.mFooter} ${s.noborder}`}
-                >
-                  <FormattedMessage id="app.fax" defaultMessage="Fax" />: +7 495
-                  109 2038
-                </a>
-                <br />
-                <a
-                  href="mailto:info@ufgam.world"
-                  className={`link ${s.mFooter}`}
-                >
-                  info@ufgam.world
-                </a>
-                <br />
-                <br />
-                <FormattedMessage
-                  id="app.mediaContacts"
-                  defaultMessage="Media contacts"
-                />
-                <br />
-                <a
-                  href="mailto:info@ufgam.world"
-                  className={`link ${s.mFooter}`}
-                >
-                  info@ufgam.world
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className={s.footerLogoPri}>
-            <img src={logoPri} alt="PRI Logo" />
-          </div>
-
-          <div className={s.footerCopy}>© UFG Asset Management</div>
         </div>
       </div>
 

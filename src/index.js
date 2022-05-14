@@ -10,7 +10,6 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/Material.css';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 import 'material-design-icons/iconfont/material-icons.css';
-import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
