@@ -5,7 +5,7 @@ import { authOperations } from '../redux/auth';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
-import RegisterView from '../views/RegisterView';
+import FormView from '../views/FormView';
 import LoginView from '../views/LoginView';
 import CabinetView from '../views/CabinetView';
 import Loader from './Loader';
@@ -20,10 +20,10 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route
-            path="/register"
+            path="/Form"
             element={
               <PublicRoute restricted>
-                <RegisterView replace to="/login" />
+                <FormView replace to="/login" />
               </PublicRoute>
             }
           />

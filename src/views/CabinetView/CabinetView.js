@@ -20,7 +20,7 @@ defaultModules.set(PNotifyMobile, {});
 
 defaults.styling = 'material';
 defaults.icons = 'material';
-defaults.delay = 1000;
+defaults.delay = 2000;
 
 Modal.setAppElement('#root');
 const customStyles = {

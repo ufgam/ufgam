@@ -234,3 +234,24 @@ p {
     background-size: contain;
   }
 }
+.headerButtons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  z-index: 1;
+}
+
+select {
+  background-color: transparent;
+  height: 25px;
+  border-radius: 30px;
+  border-width: 2px;
+  border-color: silver;
+  font-family: 'Gotham-Light', Arial, sans-serif;
+  color: silver;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0 5px;
+  outline: none;
+}
