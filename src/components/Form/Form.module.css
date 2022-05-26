@@ -5,6 +5,7 @@ p {
 }
 
 .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -46,6 +47,43 @@ p {
   outline: none;
   background-color: transparent;
   color: #fff;
+}
+
+.inputFiles {
+  display: flex;
+
+  align-items: center;
+  width: 120px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #4a56e2;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+}
+.inputFiles:hover,
+.inputFiles:focus {
+  border-color: #4a56e2;
+}
+.inputFiles input {
+  display: none;
+}
+
+.fileName {
+  color: #fff;
+  display: flex;
+}
+
+.maxSize {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #bdbdbd;
 }
 
 ::placeholder {
@@ -149,6 +187,15 @@ p {
   text-decoration: none;
 }
 
+.delBtn {
+  display: block;
+  border-radius: 50%;
+  align-items: center;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 767px) {
   .form {
     width: 320px;
@@ -189,8 +236,8 @@ p {
   }
   .input {
     width: 410px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .form {
     margin-left: 65px;
@@ -273,4 +320,43 @@ p {
     background-repeat: no-repeat;
     background-size: contain;
   }
+}
+
+.headerButtons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  z-index: 1;
+}
+
+select {
+  background-color: transparent;
+  height: 25px;
+  border-radius: 30px;
+  border-width: 2px;
+  border-color: silver;
+  font-family: 'Gotham-Light', Arial, sans-serif;
+  color: silver;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0 5px;
+  outline: none;
+}
+
+.required {
+  position: relative;
+}
+
+.required::after {
+  content: '*';
+  font-size: 25px;
+  /* display: block; */
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -20px;
+  left: -5px;
+  color: darkred;
+  z-index: 2;
 }

@@ -30,5 +30,14 @@
   "app.save": "Save",
   "app.currentPass": "Current password",
   "app.newPass": "New password",
-  "app.confirmNewPass": "Confirm new password"
+  "app.confirmNewPass": "Confirm new password",
+  "app.login": "Login",
+  "app.application": "Application",
+  "app.formName": "Your name",
+  "app.formEmail": "E-mail",
+  "app.attach": "Attach files",
+  "app.send": "Send",
+  "app.fileCountRestrictions": "Maximum 5 files: pdf jpg/jpeg/png.",
+  "app.fileSizeRestrictions": "No more then 10Mb",
+  "app.investorId": "Investor ID"
 }
