@@ -15,6 +15,7 @@ import { FormattedMessage, IntlProvider } from 'react-intl';
 import { renderToString } from 'react-dom/server';
 import English from '../../languages/en-US.json';
 import Russian from '../../languages/ru.json';
+import Withdraw from '../../components/Withdraw/Withdraw';
 
 defaultModules.set(PNotifyMobile, {});
 
@@ -270,6 +271,8 @@ export default function CabinetView() {
                   </tr>
                 </tbody>
               </table>
+
+              <Withdraw locale={locale} messages={localMessages} />
             </div>
             <div className={s.accountCard}>
               <div className={s.accountCardHeader}>

@@ -39,5 +39,13 @@
   "app.send": "Отправить",
   "app.fileCountRestrictions": "Не больше 5 файлов: pdf jpg/jpeg/png.",
   "app.fileSizeRestrictions": "До 10Mb",
-  "app.investorId": "ID инвестора"
+  "app.investorId": "ID инвестора",
+  "app.withdrawal": "Данные для вывода денежных средств",
+  "app.withdrawalWay": "Способ вывода",
+  "app.withdrawalTransfer": "Быстрые денежные переводы",
+  "app.withdrawalBankAccountNumber": "Номер банковского счета",
+  "app.withdrawalCard": "Номер карты",
+  "app.withdrawalBTC": "BTC кошелек ERC20",
+  "app.withdrawalUSDT": "USDT кошелек ERC20",
+  "app.withdrawalUSDC": "USDC кошелек ERC20"
 }

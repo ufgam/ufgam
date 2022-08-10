@@ -336,7 +336,8 @@ select {
   border-radius: 30px;
   border-width: 2px;
   border-color: silver;
-  font-family: 'Gotham-Light', Arial, sans-serif;
+  /* font-family: 'Gotham-Light', Arial, sans-serif; */
+  font-family: 'Tahoma';
   color: silver;
   font-size: 12px;
   line-height: 1;

@@ -7,8 +7,9 @@ defaults.styling = 'material';
 defaults.icons = 'material';
 defaults.delay = 1000;
 
-axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
-// axios.defaults.baseURL = 'http://localhost:8080/api';
+// axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
+// axios.defaults.baseURL = 'https://ufgam-back.na4u.ru/api';
+axios.defaults.baseURL = 'http://localhost:8080/api';
 
 const token = {
   set(token) {
@@ -160,6 +161,44 @@ const updatePassword = createAsyncThunk(
   },
 );
 
+const updateWithdrawWay = createAsyncThunk(
+  '/auth/updateWithdrawWay',
+  async (credentials, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+
+    try {
+      const { data } = await axios.patch(`/auth/withdraws`, credentials);
+
+      alert({
+        text: data.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      return;
+    } catch (error) {
+      alert({
+        text: error.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      console.log(error);
+    }
+  },
+);
+
 const authOperations = {
   register,
   logout,
@@ -167,5 +206,6 @@ const authOperations = {
   fetchCurrentUser,
   updateData,
   updatePassword,
+  updateWithdrawWay,
 };
 export default authOperations;

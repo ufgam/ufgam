@@ -38,6 +38,7 @@ export default function Login() {
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'email':
+        value = value.toLowerCase(); // !!!
         return setEmail(value);
       case 'password':
         return setPassword(value);
@@ -103,6 +104,7 @@ export default function Login() {
                   onChange={handleChange}
                   name="email"
                   value={email}
+                  autoComplete="off"
                 ></input>
                 <svg width="21" height="16" className={Styles.inputIcon}>
                   <path
@@ -120,6 +122,7 @@ export default function Login() {
                   name="password"
                   type="password"
                   value={password}
+                  autoComplete="off"
                 ></input>
                 <svg width="16" height="21" className={Styles.inputIcon}>
                   <path
