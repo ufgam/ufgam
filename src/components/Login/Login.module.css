@@ -121,10 +121,11 @@ p {
   .authForm {
     /* background-color: white; */
     background: url(../../img/pattern2.jpg) repeat;
-    margin-top: 360px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 140px;
+    padding-bottom: 60px;
+
     width: 540px;
     height: 100%;
     border-radius: 20px;
@@ -210,6 +211,7 @@ p {
     margin-bottom: 116px;
     margin-right: auto;
     margin-left: auto;
+    padding-bottom: 60px;
   }
   .spanContainer {
     display: block;

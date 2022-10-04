@@ -1,6 +1,6 @@
 import Styles from './Login.module.css';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import { alert, defaults, defaultModules } from '@pnotify/core';
@@ -19,7 +19,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState('ru');
   const [localMessages, setLocalMessagess] = useState(English);
 
   function selectLang(e) {
@@ -88,13 +88,13 @@ export default function Login() {
             </select>
           </div>
           <div className={Styles.authForm}>
-            <div className={Styles.logo}>
+            <a className={Styles.logo} href="https://ufgam.pro/" target="blank">
               <img
                 src={logo}
                 alt="UFG Asset Management"
                 className={Styles.logoIcon}
               />
-            </div>
+            </a>
 
             <form className={Styles.form} onSubmit={handleSubmit}>
               <label className={Styles.authLabel}>
@@ -136,14 +136,14 @@ export default function Login() {
                 <FormattedMessage id="app.login" defaultMessage="login" />
               </button>
 
-              <Link to="/form" className={Styles.authLink}>
-                <button type="submit" className={Styles.regBtn}>
+              {/* <Link to="/form" className={Styles.authLink}>
+                <button className={Styles.regBtn}>
                   <FormattedMessage
                     id="app.application"
                     defaultMessage="application"
                   />
                 </button>
-              </Link>
+              </Link> */}
             </form>
           </div>
         </div>

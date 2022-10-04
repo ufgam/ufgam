@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'GaramondC-Light';
 
   src: url('../src/fonts/GaramondC-Light.eot') format('embedded-opentype'),
@@ -20,9 +20,9 @@
   font-weight: normal;
 
   font-style: normal;
-}
+} */
 
-@font-face {
+/* @font-face {
   font-family: 'Gotham-Light';
 
   src: url('../src/fonts/GothamPro-Light.eot') format('embedded-opentype'),
@@ -34,7 +34,7 @@
   font-weight: normal;
 
   font-style: normal;
-}
+} */
 p,
 h1,
 h2,

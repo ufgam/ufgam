@@ -1,5 +1,11 @@
 .optionWrapper {
   text-align: center;
+  margin: 15px;
+}
+
+.option {
+  height: 40px;
+  border-radius: 0;
 }
 
 .option:hover {
@@ -16,9 +22,9 @@
   background-color: grey;
   border-radius: 50%;
   color: #fff;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   margin-right: 15px;
   vertical-align: middle;
 }

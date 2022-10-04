@@ -54,7 +54,7 @@ export default function CabinetView() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newPassword_confirmation, setnewPassword_confirmation] = useState('');
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState('ru');
   const [localMessages, setLocalMessagess] = useState(English);
 
   function selectLang(e) {
@@ -212,7 +212,12 @@ export default function CabinetView() {
   return (
     <IntlProvider locale={locale} messages={localMessages} defaultLocale="en">
       <div id="/" className={s.header}>
-        <a href="#/" className={s.logo} title="UFG Asset Management">
+        <a
+          href="https://ufgam.pro"
+          target="blank"
+          className={s.logo}
+          title="UFG Asset Management"
+        >
           <img src={logo} alt="UFG Asset Management" />
         </a>
         <div className={s.headerButtons}>

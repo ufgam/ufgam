@@ -1,15 +1,15 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { alert, defaults, defaultModules } from '@pnotify/core';
+import { alert, success, defaults, defaultModules } from '@pnotify/core';
 import * as PNotifyMobile from '@pnotify/mobile';
 defaultModules.set(PNotifyMobile, {});
 defaults.styling = 'material';
 defaults.icons = 'material';
 defaults.delay = 1000;
 
-// axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
-// axios.defaults.baseURL = 'https://ufgam-back.na4u.ru/api';
-axios.defaults.baseURL = 'http://localhost:8080/api';
+axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
+// axios.defaults.baseURL = 'https://finapp-auth-backend.ufgam.pro/api';
+// axios.defaults.baseURL = 'http://localhost:8080/api';
 
 const token = {
   set(token) {
@@ -176,7 +176,7 @@ const updateWithdrawWay = createAsyncThunk(
     try {
       const { data } = await axios.patch(`/auth/withdraws`, credentials);
 
-      alert({
+      success({
         text: data.message,
         hide: true,
         delay: 2000,
