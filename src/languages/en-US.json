@@ -39,5 +39,20 @@
   "app.send": "Send",
   "app.fileCountRestrictions": "Maximum 5 files: pdf jpg/jpeg/png.",
   "app.fileSizeRestrictions": "No more then 10Mb",
-  "app.investorId": "Investor ID"
+  "app.investorId": "Investor ID",
+  "app.withdrawal": "Funds withdrawal information",
+  "app.withdrawalWay": "The Way of Funds Withdrawal",
+  "app.withdrawalTransfer": "Instant Money Transfer",
+  "app.recipient": "Recipient`s First and Last Name",
+  "app.recipientCountry": "Country of Residence",
+  "app.recipientDocument": "Identity Card Number",
+  "app.withdrawalBankAccountNumber": "Bank Account Number",
+  "app.iban": "Beneficiary`s IBAN",
+  "app.beneficiaryBank": "Beneficiary`s Bank",
+  "app.withdrawalCard": "Card Number",
+  "app.cardholer": "CARD HOLDER",
+  "app.withdrawalBTC": "BTC Wallet ERC20",
+  "app.withdrawalUSDT": "USDT wallet ERC20",
+  "app.withdrawalUSDC": "USDC wallet ERC20",
+  "app.wallet": "Wallet"
 }

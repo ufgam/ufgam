@@ -15,6 +15,7 @@ import { FormattedMessage, IntlProvider } from 'react-intl';
 import { renderToString } from 'react-dom/server';
 import English from '../../languages/en-US.json';
 import Russian from '../../languages/ru.json';
+import Withdraw from '../../components/Withdraw/Withdraw';
 
 defaultModules.set(PNotifyMobile, {});
 
@@ -53,7 +54,7 @@ export default function CabinetView() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newPassword_confirmation, setnewPassword_confirmation] = useState('');
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState('ru');
   const [localMessages, setLocalMessagess] = useState(English);
 
   function selectLang(e) {
@@ -211,7 +212,12 @@ export default function CabinetView() {
   return (
     <IntlProvider locale={locale} messages={localMessages} defaultLocale="en">
       <div id="/" className={s.header}>
-        <a href="#/" className={s.logo} title="UFG Asset Management">
+        <a
+          href="https://ufgam.pro"
+          target="blank"
+          className={s.logo}
+          title="UFG Asset Management"
+        >
           <img src={logo} alt="UFG Asset Management" />
         </a>
         <div className={s.headerButtons}>
@@ -270,6 +276,8 @@ export default function CabinetView() {
                   </tr>
                 </tbody>
               </table>
+
+              <Withdraw locale={locale} messages={localMessages} />
             </div>
             <div className={s.accountCard}>
               <div className={s.accountCardHeader}>

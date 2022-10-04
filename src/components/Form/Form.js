@@ -6,7 +6,7 @@ import { validate, validations } from 'indicative/validator';
 import { alert, defaults, defaultModules } from '@pnotify/core';
 import * as PNotifyMobile from '@pnotify/mobile';
 import logo from '../../img/logo.svg';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { renderToString } from 'react-dom/server';
 import English from '../../languages/en-US.json';
@@ -23,7 +23,7 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [investorId, setInvestorId] = useState('');
-  const [appends, setAppends] = useState([]);
+  // const [appends, setAppends] = useState([]);
   const [locale, setLocale] = useState('en');
   const [localMessages, setLocalMessagess] = useState(English);
 
@@ -66,6 +66,7 @@ export default function Register() {
       case 'name':
         return setName(value);
       case 'email':
+        value = value.toLowerCase(); // !!!
         return setEmail(value);
       case 'phone':
         return setPhone(value);
@@ -76,31 +77,31 @@ export default function Register() {
     }
   };
 
-  function validateFileType(fileName) {
-    let idxDot = fileName.lastIndexOf('.') + 1;
-    let extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (
-      extFile === 'jpg' ||
-      extFile === 'jpeg' ||
-      extFile === 'png' ||
-      extFile === 'pdf'
-    ) {
-      return true;
-    } else {
-      alert('Only pdf, jpg/jpeg and png files are allowed!');
-      return false;
-    }
-  }
+  // function validateFileType(fileName) {
+  //   let idxDot = fileName.lastIndexOf('.') + 1;
+  //   let extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+  //   if (
+  //     extFile === 'jpg' ||
+  //     extFile === 'jpeg' ||
+  //     extFile === 'png' ||
+  //     extFile === 'pdf'
+  //   ) {
+  //     return true;
+  //   } else {
+  //     alert('Only pdf, jpg/jpeg and png files are allowed!');
+  //     return false;
+  //   }
+  // }
 
-  async function addFiles(e) {
-    let target = e.target || e.srcElement;
-    let files = target.files;
-    for (let file of files) {
-      if (validateFileType(file.name)) {
-        setAppends(appends => [...appends, file]);
-      }
-    }
-  }
+  // async function addFiles(e) {
+  //   let target = e.target || e.srcElement;
+  //   let files = target.files;
+  //   for (let file of files) {
+  //     if (validateFileType(file.name)) {
+  //       setAppends(appends => [...appends, file]);
+  //     }
+  //   }
+  // }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -113,11 +114,11 @@ export default function Register() {
       data.append('email', email);
       data.append('phone', phone);
       data.append('investorId', investorId);
-      if (appends?.[0]) {
-        for (let i = 0; i < appends.length; i++) {
-          data.append(`images`, appends[i], appends[i].name);
-        }
-      }
+      // if (appends?.[0]) {
+      //   for (let i = 0; i < appends.length; i++) {
+      //     data.append(`images`, appends[i], appends[i].name);
+      //   }
+      // }
       const resp = await axios.post('/auth/register', data);
       alert(resp.data.message);
 
@@ -125,7 +126,7 @@ export default function Register() {
       setEmail('');
       setPhone('');
       setInvestorId('');
-      setAppends([]);
+      // setAppends([]);
     } catch (er) {
       console.log(er.message);
       alert({
@@ -139,30 +140,30 @@ export default function Register() {
     }
   }
 
-  function onDeleteFile(e) {
-    const deletingFileName = e.target.parentNode.innerText.slice(0, -4);
-    setAppends(appends.filter(el => el.name !== deletingFileName));
-  }
+  // function onDeleteFile(e) {
+  //   const deletingFileName = e.target.parentNode.innerText.slice(0, -4);
+  //   setAppends(appends.filter(el => el.name !== deletingFileName));
+  // }
 
-  function FileNames() {
-    let names = appends.map(file => {
-      let key = uuidv4();
+  // function FileNames() {
+  //   let names = appends.map(file => {
+  //     let key = uuidv4();
 
-      return (
-        <li key={key} className={Styles.fileName}>
-          {file.name}
-          <span
-            className={Styles.delBtn}
-            key={`${key}X`}
-            onClick={onDeleteFile}
-          >
-            &nbsp;&nbsp;X
-          </span>
-        </li>
-      );
-    });
-    return <ul className="list">{names}</ul>;
-  }
+  //     return (
+  //       <li key={key} className={Styles.fileName}>
+  //         {file.name}
+  //         <span
+  //           className={Styles.delBtn}
+  //           key={`${key}X`}
+  //           onClick={onDeleteFile}
+  //         >
+  //           &nbsp;&nbsp;X
+  //         </span>
+  //       </li>
+  //     );
+  //   });
+  //   return <ul className="list">{names}</ul>;
+  // }
 
   const placeholderFormName = renderToString(
     <IntlProvider locale={locale} messages={localMessages}>
@@ -246,7 +247,7 @@ export default function Register() {
                   id="inputcheck"
                   className={Styles.input}
                   placeholder={placeholderPhone}
-                  autoComplete="on"
+                  autoComplete="off"
                   type="text"
                   onChange={handleChange}
                   name="phone"
@@ -288,7 +289,7 @@ export default function Register() {
                   <path d="M 20.292969 5.2929688 L 9 16.585938 L 4.7070312 12.292969 L 3.2929688 13.707031 L 9 19.414062 L 21.707031 6.7070312 L 20.292969 5.2929688 z"></path>
                 </svg>
               </label>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              {/* <div style={{ display: 'flex', alignItems: 'center' }}>
                 <label htmlFor="file" className={Styles.inputFiles}>
                   <svg width="20" height="20" viewBox="0 0 20 20">
                     <path d="M4.317,16.411c-1.423-1.423-1.423-3.737,0-5.16l8.075-7.984c0.994-0.996,2.613-0.996,3.611,0.001C17,4.264,17,5.884,16.004,6.88l-8.075,7.984c-0.568,0.568-1.493,0.569-2.063-0.001c-0.569-0.569-0.569-1.495,0-2.064L9.93,8.828c0.145-0.141,0.376-0.139,0.517,0.005c0.141,0.144,0.139,0.375-0.006,0.516l-4.062,3.968c-0.282,0.282-0.282,0.745,0.003,1.03c0.285,0.284,0.747,0.284,1.032,0l8.074-7.985c0.711-0.71,0.711-1.868-0.002-2.579c-0.711-0.712-1.867-0.712-2.58,0l-8.074,7.984c-1.137,1.137-1.137,2.988,0.001,4.127c1.14,1.14,2.989,1.14,4.129,0l6.989-6.896c0.143-0.142,0.375-0.14,0.516,0.003c0.143,0.143,0.141,0.374-0.002,0.516l-6.988,6.895C8.054,17.836,5.743,17.836,4.317,16.411"></path>
@@ -319,8 +320,8 @@ export default function Register() {
                     />
                   </p>
                 </div>
-              </div>
-              <FileNames />
+              </div> */}
+              {/* <FileNames /> */}
               <button type="submit" className={Styles.regBtn}>
                 <FormattedMessage id="app.send" defaultMessage="send" />
               </button>

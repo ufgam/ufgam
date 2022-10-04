@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { alert, defaults, defaultModules } from '@pnotify/core';
+import { alert, success, defaults, defaultModules } from '@pnotify/core';
 import * as PNotifyMobile from '@pnotify/mobile';
 defaultModules.set(PNotifyMobile, {});
 defaults.styling = 'material';
@@ -8,6 +8,7 @@ defaults.icons = 'material';
 defaults.delay = 1000;
 
 axios.defaults.baseURL = 'https://finapp-auth-backend.herokuapp.com/api';
+// axios.defaults.baseURL = 'https://finapp-auth-backend.ufgam.pro/api';
 // axios.defaults.baseURL = 'http://localhost:8080/api';
 
 const token = {
@@ -160,6 +161,44 @@ const updatePassword = createAsyncThunk(
   },
 );
 
+const updateWithdrawWay = createAsyncThunk(
+  '/auth/updateWithdrawWay',
+  async (credentials, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+
+    try {
+      const { data } = await axios.patch(`/auth/withdraws`, credentials);
+
+      success({
+        text: data.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      return;
+    } catch (error) {
+      alert({
+        text: error.message,
+        hide: true,
+        delay: 2000,
+        sticker: false,
+        closer: true,
+        dir1: 'down',
+      });
+      console.log(error);
+    }
+  },
+);
+
 const authOperations = {
   register,
   logout,
@@ -167,5 +206,6 @@ const authOperations = {
   fetchCurrentUser,
   updateData,
   updatePassword,
+  updateWithdrawWay,
 };
 export default authOperations;

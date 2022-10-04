@@ -10,30 +10,31 @@
   width: 300px;
   height: 60px;
   margin: 0 auto;
+  font-family: 'Gotham-Light', Arial, sans-serif;
 }
 
 .logo img {
   width: 100%;
 }
 
-.headerButtons{
+.headerButtons {
   position: absolute;
   right: 10px;
   top: 10px;
   display: flex;
 }
 
-select{
+select {
   background-color: transparent;
   height: 25px;
+  width: 100%;
   border-radius: 30px;
   border-width: 2px;
   border-color: silver;
-  font-family: 'Gotham-Light',
-  Arial,
-  sans-serif;
+  /* font-family: 'Gotham-Light', Arial, sans-serif; */
+  font-family: 'Tahoma';
   color: silver;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1;
   padding: 0 5px;
   outline: none;
@@ -43,6 +44,8 @@ select{
   background: none;
   border: none;
   cursor: pointer;
+  /* height: 40px; */
+  width: 40px;
 }
 
 .logout:hover img {
@@ -66,7 +69,8 @@ select{
 /* account */
 
 .mainTitle {
-  font-family: 'Gotham-Light', Arial, sans-serif;
+  /* font-family: 'Gotham-Light', Arial, sans-serif; */
+  font-family: 'Tahoma';
   font-size: 45px;
   font-weight: 600;
   color: #185289;
@@ -97,7 +101,7 @@ select{
 }
 
 .accountCard td {
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .accountCard th {
   font-weight: bold;
@@ -140,11 +144,12 @@ h2 {
 }
 
 .accountHeaderPic {
+  vertical-align: middle;
   width: 40px;
   height: 40px;
   display: inline-block;
   background-color: grey;
-  border-radius: 50%;
+  border-radius: 25%;
   color: #fff;
   line-height: 40px;
   text-align: center;
@@ -199,13 +204,15 @@ h2 {
 }
 
 .footerTitle {
-  font-family: Gotham-Light;
+  /* font-family: Gotham-Light; */
+  font-family: 'Tahoma';
   font-size: 34px;
   letter-spacing: -1.5px;
 }
 
 .footerContacts {
-  font-family: Gotham-Light;
+  /* font-family: Gotham-Light; */
+  font-family: 'Tahoma';
   font-size: 15px;
   line-height: 1.6em;
   margin: 22px 0;
@@ -244,7 +251,8 @@ h2 {
 
 .modalHeader {
   color: rgb(3, 47, 91);
-  font-family: Gotham-Light;
+  /* font-family: Gotham-Light; */
+  font-family: 'Tahoma';
   font-weight: 600;
   font-size: 20px;
 }
@@ -288,7 +296,8 @@ h2 {
 .modalForm p {
   margin-bottom: 5px;
   color: #7ca5cb;
-  font-family: Gotham-Light;
+  /* font-family: Gotham-Light; */
+  font-family: 'Tahoma';
   font-size: 16px;
 }
 .modalForm input {
@@ -307,10 +316,6 @@ h2 {
 .modalForm input:focus {
   border-color: rgb(3, 47, 91);
 }
-.modalForm input :hover,
-.modalForm input:focus {
-  border-color: rgb(3, 47, 91);
-}
 
 .modalForm button {
   margin-top: 20px;
@@ -320,17 +325,18 @@ h2 {
   font-size: 15px;
   color: #7ca5cb;
   background: transparent;
-  font-family: Gotham-Light;
+  /* font-family: Gotham-Light; */
+  font-family: 'Tahoma';
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
   border: 1px solid #7ca5cb;
   cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 
 .modalForm button:hover {
   background: #6ab0f1;
-
   color: #fff;
 }
 
@@ -387,7 +393,10 @@ h2 {
   }
 
   .modalForm {
-    width: 100%}
+    width: 100%;
+  }
 
-    .modalForm input {font-size: 12px}
+  .modalForm input {
+    font-size: 12px;
+  }
 }
